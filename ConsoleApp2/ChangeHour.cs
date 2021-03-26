@@ -1,11 +1,14 @@
 ﻿using System;
 
+
 namespace Akcesory
 {
     class Hours
     {
         private int hour; // ta zmienna posiada właściwość
-        private int second;
+        private int hourPM;
+        private int exception;
+        //private int second;
         
 
         public int Hour // Definicja właściwość
@@ -13,18 +16,52 @@ namespace Akcesory
             get { return hour; }
             set
             {
-                if (value >= 0 && value <= 24)
+                Console.WriteLine("Godzina pocz" + hour + "Value pocz: " + value);
+                
+                if (value >= 13 && value <=23)
                 {
                     hour = value;
-                    second = value * 3600;
+                    hourPM = value%12;
+                    
+                    Console.WriteLine("Godz PM" + hour + "vs" + hourPM + "value:" + value);
+               
+                }else if (value >=0 && value < 11)
+                {
+                    hour = value;
+                 
+                }else if (value == 12)
+                {
+                    hour = value;
+                 
+                }else if (value == 24)
+                {
+                    hour = value;
+                    exception = value % 12;
                 }
             }
         }
 
-        public string Info()
+        
+        public override string ToString()
         {
-            return "Godzina " + hour + ". " + second +
-                   "  sekunda tej doby.";
+            if (hour >= 0 && hour <= 11)
+             {
+                 return "Godzina: " + hour + "AM";
+             }
+             else if (hour >= 13 && hour <= 23)
+             {
+                 return "Godzina: " + hourPM + "PM";
+             }
+             else if (hour == 12)
+             {
+                 return "Godzina: " + hour + "PM";
+             }
+             else if (hour == 24)
+             {
+                 return "Godzina: " + exception + "AM";
+             }
+ 
+             return "Dotarłeś do końca wszechświata";
         }
     }
 }
