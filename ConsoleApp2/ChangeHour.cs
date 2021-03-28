@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace Akcesory
 {
     class Hours
@@ -22,9 +21,7 @@ namespace Akcesory
                 {
                     hour = value;
                     hourPM = value%12;
-                    
-                    Console.WriteLine("Godz PM" + hour + "vs" + hourPM + "value:" + value);
-               
+
                 }else if (value >=0 && value < 11)
                 {
                     hour = value;
@@ -37,6 +34,10 @@ namespace Akcesory
                 {
                     hour = value;
                     exception = value % 12;
+                }
+                else
+                {
+                    hour = -1;
                 }
             }
         }

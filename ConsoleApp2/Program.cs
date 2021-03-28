@@ -9,7 +9,7 @@ namespace ConsoleApp2
         {
             
             Hours godz = new Hours();
-            godz.Hour = 14; //dostęp do zmiennej prywatnej poprzez właściwość
+            godz.Hour = 25; //dostęp do zmiennej prywatnej poprzez właściwość
             //przypisanie możliwe dzięki sekcji set we własności Hour
             Console.WriteLine(godz);
             //sekcja set nie tylko umożliwia bezpośredni dostęp do zmiennej 
