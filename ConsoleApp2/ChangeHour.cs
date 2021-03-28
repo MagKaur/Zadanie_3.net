@@ -15,8 +15,6 @@ namespace Akcesory
             get { return hour; }
             set
             {
-                Console.WriteLine("Godzina pocz" + hour + "Value pocz: " + value);
-                
                 if (value >= 13 && value <=23)
                 {
                     hour = value;
@@ -33,7 +31,7 @@ namespace Akcesory
                 }else if (value == 24)
                 {
                     hour = value;
-                    exception = value % 12;
+                    exception = value % 12 + 12;
                 }
                 else
                 {
